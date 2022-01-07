@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Preference</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link rel="stylesheet" href="{% static 'style.css'%}" type = "text/css"> -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css'%}">
+    <link rel="stylesheet" href= "{% static 'assets/css/preference.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css'%}">
+    <link rel="stylesheet" href="{% static 'style2.css'%}">
+
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href="/"><h2 style = "text-transform: inherit;">HitchHiking</h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/trail/to_schedule">Schedule</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/like/to_like">Preference</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/advancequery/Ranking_table">Ranking</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/advancequery/Recommend_table">Recommend</a>
+                  <!-- <a class="nav-link" href="/login">About Us</a> -->
+                </li>
+              </ul>
+            </div>
+            <!-- <div class="functional-buttons">
+              {% csrf_token %}
+              <ul>
+                <li><a href="user/login">login</a></li>
+                <li><a href="user/register">Sign Up</a></li>
+              </ul>
+            </div> -->
+          </div>
+        </nav>
+      </header>
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="page-heading header-text">
+        <h1>My Preference</h1>
+      </div>
+    <!-- Banner Ends Here -->
+
+    <!-- Trusted Starts Here -->
+
+    <!-- Trusted Ends Here -->
+
+
+    <!-- Services Starts Here -->
+    <div class="services-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <div class = "search-result">
+
+                {#             {% for like in user_like %}#}
+                <center>
+                  <h1>
+                    Select Your Favorite Features!
+                  </h1>
+                    <hr/>
+                    <table id="trailTable">
+                        <tr>
+                          <th>Features</th>
+                          <th>Fancy Degree</th>
+                          <th>Delete</th>
+                        </tr>
+                        {% for data in user_like %}
+                        <tr>
+                          <td>{{ data.0}}</td>
+                          <td>{{ data.1}}</td>
+                          <td>
+                              <form action="delete_like?like={{data}}" method="POST">
+                                  {% csrf_token %}
+                                  <input type="submit" value="Delete" class="button-transparent">
+                              </form>
+                          </td>
+                        </tr>
+                        {%  endfor %}
+                    </table>
+                    <hr/>
+                </center>
+  {#          <!--    {% endfor %}-->#}
+
+    <form action="update_like" method="POST">
+        {% csrf_token %}
+
+        <div class = "box-inline">Features:</div>
+                <select name="feature" class="button-transparent-lowercase">
+                    <option value="99" selected>Select an Interest</option>
+                    <option value="1">Forest</option>
+                    <option value="2">River</option>
+                    <option value="3">Lake</option>
+                    <option value="4">Beach</option>
+                    <option value="5">Cave</option>
+                    <option value="6">Wild Flowers</option>
+                    <option value="7">Waterfall</option>
+                    <option value="8">Historic Site</option>
+                    <option value="9">Wildlife</option>
+                    <option value="10">Hot Springs</option>
+                    <option value="11">Views</option>
+                    <option value="12">No Dogs</option>
+                    <option value="13">Dogs</option>
+                    <option value="14">Kids</option>
+                    <option value="15">Partially Paved</option>
+                    <option value="16">Paved</option>
+                    <option value="17">City Walk</option>
+                    <option value="18">Strollers</option>
+                    <option value="19">Walking</option>
+                    <option value="20">Hiking</option>
+                    <option value="21">Fishing</option>
+                    <option value="22">Birding</option>
+                    <option value="23">Trail Running</option>
+                    <option value="24">Horseback Riding</option>
+                    <option value="25">Camping</option>
+                    <option value="26">Nature Trips</option>
+                    <option value="27">Scenic Driving</option>
+                    <option value="28">Kayaking</option>
+                    <option value="29">Surfing</option>
+                    <option value="30">Backpacking</option>
+                    <option value="31">Biking</option>
+                    <option value="32">Skking</option>
+                    <option value="33">Climbing</option>
+                </select>
+                &nbsp
+                <div class = "box-inline">Rating:</div>
+                    <input type="number" name="like_rate" min="0" max="5" value="0" class= "button-transparent-lowercase">
+                <input type="submit" value="Like" class="button">
+
+
+                  </form>
+
+
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- Services Ends Here -->
+
+
+    <!-- Footer Starts Here -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>About Us</h2>
+              </div>
+              <!-- <p>1</p> -->
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>Trails</h2>
+              </div>
+              <ul class="footer-list">
+              </ul>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>Business</h2>
+              </div>
+              <ul class="footer-list">
+
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>More Information</h2>
+              </div>
+              <ul class="footer-list">
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="sub-footer">
+              <p>Copyright &copy; 2021 HitchHiking</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Ends Here -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assets/js/custom.js'%}"></script>
+    <script src="{% static 'assets/js/owl.js'%}"></script>
+    <script src="{% static 'assets/js/accordions.js'%}"></script>
+
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+  </body>
+</html>

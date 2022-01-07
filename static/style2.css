@@ -1,0 +1,153 @@
+.button {
+	outline: none;
+	cursor: pointer;
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	padding: 0px 25px;
+	border: 1px solid;
+	margin-left: 10px;
+	background-color: #00bcd4;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	transition: all 0.5s;
+}
+.button-transparent {
+	outline: none;
+	cursor: pointer;
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	padding: 0px 25px;
+	border: 1px solid;
+	margin-left: 10px;
+	background-color: transparent;
+	color: rgb(0, 0, 0);
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	transition: all 0.5s;
+}
+
+.button-transparent-lowercase {
+	outline: none;
+	cursor: pointer;
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	padding: 0px 25px;
+	border: 1px solid;
+	margin-left: 10px;
+	background-color: transparent;
+	color: rgb(0, 0, 0);
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	transition: all 0.5s;
+}
+
+
+#trailTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #trailTable td, #trailTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #trailTable tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #trailTable tr:hover {background-color: #ddd;}
+  
+  #trailTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #228B22;
+    color: white;
+  }
+
+  /*button text styling*/
+  .box-inline {
+	font-family: 'Roboto', sans-serif;
+	display: inline-block;
+	font-size: 18px;
+	/* color: #00bcd4; */
+	color: black;
+}
+
+.box-title {
+	font-family: 'Roboto', sans-serif;
+	font-size: 30px;
+	/* color: #00bcd4; */
+	color: black;
+
+}
+
+/*radio*/
+.option-input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	position: relative;
+	top: 13.33333px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	transition: all 0.15s ease-out 0s;
+	background: transparent;
+	border: 2px solid grey;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	margin-right: 0.5rem;
+	outline: none;
+	position: relative;
+	z-index: 1000;
+  }
+  .option-input:hover {
+	background: #9faab7;
+  }
+  .option-input:checked {
+	background: #00bcd4;
+  }
+  .option-input:checked::before {
+	height: 25px;
+	width: 25px;
+	position: absolute;
+	content: '✔';
+	display: inline-block;
+	font-size: 26.66667px;
+	text-align: center;
+	line-height: 25px;
+  }
+  .option-input:checked::after {
+	-webkit-animation: click-wave 0.65s;
+	-moz-animation: click-wave 0.65s;
+	animation: click-wave 0.65s;
+	background: #40e0d0;
+	content: '';
+	display: block;
+	position: relative;
+	z-index: 100;
+  }
+  .option-input.radio {
+	border-radius: 50%;
+  }
+  .option-input.radio::after {
+	border-radius: 50%;
+  }
+  
+  
+  
