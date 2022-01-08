@@ -7,3 +7,8 @@ We designed the relational database on MYSQL that contains the trail, user, and 
 The final application is ran on GCP(google cloud platform):https://hitchhiking-326615.uc.r.appspot.com/ 
 
 More detail design and process can be find in : https://wiki.illinois.edu/wiki/display/CS411AAFA21/Project+5+Wholesome
+
+## My part
+- Design the relational database and prepare the database Schema.
+- Create the trigger in each table and stored procedures for buddies matching and restraurants recomendation.
+- Prepare the application structure with Django and build the fuctions in like, advancequery, and trail files
