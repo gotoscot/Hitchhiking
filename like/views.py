@@ -54,7 +54,7 @@ def update_like(request):
                     connection.commit()
                 return to_like(request)
             except Exception as e:
-                print(e)
+#                 print(e)
                 connection.rollback()
         return to_like(request)
     else:
